@@ -8,7 +8,7 @@ from fnmatch import fnmatch
 from xml.dom import minidom
 import gzip
 
-prefix = "/data/www/devel/wms/"
+prefix = "/data/www/wms/"
 today = date.today()
 
 
@@ -110,12 +110,11 @@ def main():
     log_list = get_xml_data()
     for key, value in log_list.items():
         for file in gen_find(prefix + key, r'(log|gz|xz)$'):
-            print file
+            log = Log(file)
             for key1,value1 in value.items():
                 if fnmatch(file, '*/' + key1 + '/*'):
                     log = Log(file, keep_day=value1['limit'], zip_day=value1['zip_time'])
-            log = Log(file)
-                log.process()
+            log.process()
 
     print("{0}:\tend log rotate ...".format(datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
 
