@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<logs>
+    <dir> 
+        <scanner_dir>log</scanner_dir>
+        <log>
+            <name>api</name>
+            <save_limit_time>10</save_limit_time>
+            <zip_limit_time>1</zip_limit_time>
+        </log>
+
+        <log>
+            <name>daemon</name>
+            <save_limit_time>5</save_limit_time>
+            <zip_limit_time>1</zip_limit_time>
+        </log>
+
+        <log>
+            <name>temp</name>
+            <save_limit_time>10</save_limit_time>
+            <zip_limit_time>5</zip_limit_time>
+        </log>
+    </dir>
+</logs>
